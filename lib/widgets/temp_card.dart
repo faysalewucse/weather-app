@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app_steadfastit/helper/colors.dart';
 import 'package:weather_app_steadfastit/helper/gaps.dart';
 import 'package:weather_app_steadfastit/helper/styles.dart';
-import 'package:weather_app_steadfastit/widgets/degree_text.dart';
+import 'package:weather_app_steadfastit/widgets/temperature_text.dart';
 
 class TemperatureCard extends StatelessWidget {
   final String title;
@@ -38,7 +38,7 @@ class TemperatureCard extends StatelessWidget {
                 height: 48,
                 width: 50,
               ),
-              DegreeText(
+              TemperatureText(
                 temperature: temperature,
                 temperatureTextStyle: Theme.of(context).textTheme.titleMedium,
                 degreeTextStyle: Theme.of(context).textTheme.titleSmall,

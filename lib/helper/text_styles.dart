@@ -11,6 +11,8 @@ TextStyle WHITE_700_32 =
 TextStyle WHITE_700_14 =
     const TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700, color: WHITE);
 TextStyle WHITE_300_122 =
-    const TextStyle(fontSize: 122.0, fontWeight: FontWeight.w300, color: WHITE);
+    const TextStyle(fontSize: 122.0, fontWeight: FontWeight.w300, color: WHITE, height: 1);
 TextStyle WHITE_500_18 =
     const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500, color: WHITE);
+TextStyle WHITE_500_24 =
+const TextStyle(fontSize: 24.0, fontWeight: FontWeight.w500, color: WHITE);

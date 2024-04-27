@@ -10,10 +10,12 @@ ThemeData lightTheme = ThemeData(
     primary: Color(0xff123597),
     secondary: Color(0xff97ABFF),
     surface: WHITE,
+    onBackground: Color(0xff3F5EBB)
   ),
   textTheme: TextTheme(
     titleSmall: WHITE_400_12,
     titleMedium: WHITE_400_14,
+    titleLarge: WHITE_500_24,
     headlineMedium: WHITE_700_32,
     bodySmall: WHITE_500_18,
     bodyLarge: WHITE_300_122,
