@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 
 class DegreeText extends StatelessWidget {
-  final num degree;
-  final TextStyle? textStyle;
-  const DegreeText({Key? key, required this.degree, this.textStyle}) : super(key: key);
+  final num temperature;
+  final TextStyle? temperatureTextStyle;
+  final TextStyle? degreeTextStyle;
+  const DegreeText({Key? key, required this.temperature, this.degreeTextStyle, this.temperatureTextStyle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "$degree",
-          style: Theme.of(context).textTheme.bodyLarge,
+          "$temperature",
+          style: temperatureTextStyle ?? Theme.of(context).textTheme.bodyLarge,
         ),
-        Positioned(
-            right: 0,
-            top: 12,
-            child: Text(
-              "o",
-              style: textStyle ?? Theme.of(context).textTheme.headlineMedium,
-            )),
+        Text(
+          "o",
+          style: degreeTextStyle ?? Theme.of(context).textTheme.headlineMedium,
+        )
       ],
     );
   }

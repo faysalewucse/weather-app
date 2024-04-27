@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:weather_app_steadfastit/helper/colors.dart';
 import 'package:weather_app_steadfastit/helper/gaps.dart';
 import 'package:weather_app_steadfastit/helper/image_assets.dart';
+import 'package:weather_app_steadfastit/helper/styles.dart';
 import 'package:weather_app_steadfastit/theme/light_theme.dart';
 import 'package:weather_app_steadfastit/widgets/degree_text.dart';
 import 'package:weather_app_steadfastit/widgets/temp_card.dart';
 import 'package:weather_app_steadfastit/widgets/toggle_button.dart';
 
-void main() {
+void main() async{
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -36,17 +39,7 @@ class Homepage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.only(top: 60),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Theme.of(context).colorScheme.secondary,
-              Theme.of(context).colorScheme.primary
-            ],
-            stops: const [0, 1],
-          ),
-        ),
+        decoration: gradientDecoration,
         child: Column(
           children: [
             Text(
@@ -79,7 +72,9 @@ class Homepage extends StatelessWidget {
                   width: 135,
                 ),
                 HORIZONTAL_GAP_28,
-                const DegreeText(degree: 13)
+                const DegreeText(
+                  temperature: 13,
+                )
               ],
             ),
             Text(
@@ -93,22 +88,33 @@ class Homepage extends StatelessWidget {
                 ToggleButton(
                   label: "Today",
                   color:
-                      Theme.of(context).colorScheme.secondary.withOpacity(0.1),
+                      Theme.of(context).colorScheme.secondary.withOpacity(0.3),
                 ),
                 HORIZONTAL_GAP_8,
                 ToggleButton(
                   label: "Next Day",
-                  color: BLACK.withOpacity(0.1),
+                  color: BLACK.withOpacity(0.2),
                 ),
               ],
             ),
-            Expanded(
-                child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (_, index) => const TemperatureCard(
-                        iconAsset: PngAssets.PARTLY_CLOUDY_1, degree: 13),
-                    separatorBuilder: (_, index) => Container(),
-                    itemCount: 7))
+            VERTICAL_GAP_32,
+            SizedBox(
+              height: 158,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) => Padding(
+                  padding: EdgeInsets.only(left: index == 0 ? 16.0 : 0, right: index == 6 ? 16.0 : 0),
+                  child: const TemperatureCard(
+                    selected: true,
+                    title: "Now",
+                    iconAsset: PngAssets.PARTLY_CLOUDY_1,
+                    temperature: 13,
+                  ),
+                ),
+                separatorBuilder: (_, index) => HORIZONTAL_GAP_12,
+                itemCount: 7,
+              ),
+            )
           ],
         ),
       ),

@@ -13,6 +13,7 @@ ThemeData lightTheme = ThemeData(
   ),
   textTheme: TextTheme(
     titleSmall: WHITE_400_12,
+    titleMedium: WHITE_400_14,
     headlineMedium: WHITE_700_32,
     bodySmall: WHITE_500_18,
     bodyLarge: WHITE_300_122,

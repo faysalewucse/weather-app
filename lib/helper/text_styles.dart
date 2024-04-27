@@ -4,6 +4,8 @@ import 'package:weather_app_steadfastit/helper/colors.dart';
 
 TextStyle WHITE_400_12 =
     const TextStyle(color: WHITE, fontSize: 12, fontWeight: FontWeight.w400);
+TextStyle WHITE_400_14 =
+    const TextStyle(color: WHITE, fontSize: 16, fontWeight: FontWeight.w400);
 TextStyle WHITE_700_32 =
     const TextStyle(fontSize: 32.0, fontWeight: FontWeight.w700, color: WHITE);
 TextStyle WHITE_700_14 =
