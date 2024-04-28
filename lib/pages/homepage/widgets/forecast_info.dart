@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_steadfastit/helper/colors.dart';
 import 'package:weather_app_steadfastit/helper/gaps.dart';
 import 'package:weather_app_steadfastit/helper/image_assets.dart';
 import 'package:weather_app_steadfastit/helper/styles.dart';
@@ -112,7 +113,7 @@ class ForecastInfo extends StatelessWidget {
                     height: 75,
                     width: 75,
                     decoration: BoxDecoration(
-                        color: const Color(0xff3D5CB9),
+                        color: PRIMARY,
                         borderRadius: BorderRadius.circular(35)),
                   ),
                   Positioned.fill(

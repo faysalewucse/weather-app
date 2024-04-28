@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter/services.dart';
+import 'package:weather_app_steadfastit/helper/colors.dart';
 import 'package:weather_app_steadfastit/pages/homepage/homepage.dart';
 import 'package:weather_app_steadfastit/theme/light_theme.dart';
 
 void main() async{
-  await dotenv.load(fileName: ".env");
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    systemNavigationBarColor: PRIMARY, // navigation bar color
+  ));
+
   runApp(const MyApp());
 }
 
