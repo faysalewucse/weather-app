@@ -1,39 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:weather_app_steadfastit/helper/gaps.dart';
 import 'package:weather_app_steadfastit/helper/image_assets.dart';
 
-class CurrentLocation extends StatefulWidget {
+class CurrentLocation extends StatelessWidget {
   const CurrentLocation({Key? key}) : super(key: key);
 
-  @override
-  State<CurrentLocation> createState() => _CurrentLocationState();
-}
-
-class _CurrentLocationState extends State<CurrentLocation> {
-  Future<void> checkLocationPermission() async {
-    LocationPermission permission = await Geolocator.checkPermission();
-
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission != LocationPermission.whileInUse &&
-          permission != LocationPermission.always) {
-        return;
-      }
-    }
-
-    if (permission == LocationPermission.whileInUse ||
-        permission == LocationPermission.always) {
-      getCurrentLocation();
-    }
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    checkLocationPermission();
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -61,16 +32,4 @@ class _CurrentLocationState extends State<CurrentLocation> {
       ],
     );
   }
-
-  Future<void> getCurrentLocation() async {
-    try {
-      Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
-      );
-      print('Latitude: ${position.latitude}, Longitude: ${position.longitude}');
-    } catch (e) {
-      print('Error getting location: $e');
-    }
-  }
-
 }
