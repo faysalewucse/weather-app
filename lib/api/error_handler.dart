@@ -18,8 +18,6 @@ void showApiErrorMessage(response) {
       } else {
         showErrorMessage(response.response!.data["message"].toString());
       }
-      debugPrint("dioError message====>${response.response?.data["message"]}",
-          wrapWidth: 1024);
     } else if (response.type == DioExceptionType.sendTimeout) {
       showErrorMessage('Send Timeout');
     } else if (response.type == DioExceptionType.cancel) {
@@ -32,4 +30,6 @@ void showApiErrorMessage(response) {
   } else {
     showErrorMessage(response.toString());
   }
+  debugPrint("dioError message====>${response.response?.data["message"]}",
+      wrapWidth: 1024);
 }

@@ -1,10 +1,5 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app_steadfastit/api/error_handler.dart';
-
-final locationProvider = Provider<Location>((ref) {
-  return Location();
-});
 
 class Location {
   Future<Position?> getCurrentLocation() async {

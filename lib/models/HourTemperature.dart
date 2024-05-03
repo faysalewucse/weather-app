@@ -5,19 +5,19 @@ class HourTemperature {
   String time;
   double tempC;
   double tempF;
-  int isDay;
+  double isDay;
   Condition condition;
   double windMph;
   double windKph;
-  int windDegree;
+  double windDegree;
   String windDir;
   double pressureMb;
   double pressureIn;
   double precipMm;
   double precipIn;
   double snowCm;
-  int humidity;
-  int cloud;
+  double humidity;
+  double cloud;
   double feelslikeC;
   double feelslikeF;
   double windchillC;
@@ -26,15 +26,15 @@ class HourTemperature {
   double heatindexF;
   double dewpointC;
   double dewpointF;
-  int willItRain;
-  int chanceOfRain;
-  int willItSnow;
-  int chanceOfSnow;
+  // double willItRain;
+  double chanceOfRain;
+  // double willItSnow;
+  double chanceOfSnow;
   double visKm;
   double visMiles;
   double gustMph;
   double gustKph;
-  int uv;
+  // double uv;
 
   HourTemperature({
     required this.timeEpoch,
@@ -62,55 +62,54 @@ class HourTemperature {
     required this.heatindexF,
     required this.dewpointC,
     required this.dewpointF,
-    required this.willItRain,
+    // required this.willItRain,
     required this.chanceOfRain,
-    required this.willItSnow,
+    // required this.willItSnow,
     required this.chanceOfSnow,
     required this.visKm,
     required this.visMiles,
     required this.gustMph,
     required this.gustKph,
-    required this.uv,
+    // required this.uv,
   });
 
-  factory HourTemperature.fromJson(Map<String, dynamic> json) {
-    return HourTemperature(
-      timeEpoch: json['time_epoch'],
-      time: json['time'],
-      tempC: json['temp_c'].toDouble(),
-      tempF: json['temp_f'].toDouble(),
-      isDay: json['is_day'],
-      condition: Condition.fromJson(json['condition']),
-      windMph: json['wind_mph'].toDouble(),
-      windKph: json['wind_kph'].toDouble(),
-      windDegree: json['wind_degree'],
-      windDir: json['wind_dir'],
-      pressureMb: json['pressure_mb'].toDouble(),
-      pressureIn: json['pressure_in'].toDouble(),
-      precipMm: json['precip_mm'].toDouble(),
-      precipIn: json['precip_in'].toDouble(),
-      snowCm: json['snow_cm'].toDouble(),
-      humidity: json['humidity'],
-      cloud: json['cloud'],
-      feelslikeC: json['feelslike_c'].toDouble(),
-      feelslikeF: json['feelslike_f'].toDouble(),
-      windchillC: json['windchill_c'].toDouble(),
-      windchillF: json['windchill_f'].toDouble(),
-      heatindexC: json['heatindex_c'].toDouble(),
-      heatindexF: json['heatindex_f'].toDouble(),
-      dewpointC: json['dewpoint_c'].toDouble(),
-      dewpointF: json['dewpoint_f'].toDouble(),
-      willItRain: json['will_it_rain'],
-      chanceOfRain: json['chance_of_rain'],
-      willItSnow: json['will_it_snow'],
-      chanceOfSnow: json['chance_of_snow'],
-      visKm: json['vis_km'].toDouble(),
-      visMiles: json['vis_miles'].toDouble(),
-      gustMph: json['gust_mph'].toDouble(),
-      gustKph: json['gust_kph'].toDouble(),
-      uv: json['uv'],
-    );
-  }
+
+  factory HourTemperature.fromJson(Map<String, dynamic> json) => HourTemperature(
+    timeEpoch: json['time_epoch'],
+    time: json['time'],
+    tempC: json['temp_c'].toDouble(),
+    tempF: json['temp_f'].toDouble(),
+    isDay: json['is_day'].toDouble(),
+    condition: Condition.fromJson(json['condition']),
+    windMph: json['wind_mph'].toDouble(),
+    windKph: json['wind_kph'].toDouble(),
+    windDegree: json['wind_degree'].toDouble(),
+    windDir: json['wind_dir'],
+    pressureMb: json['pressure_mb'].toDouble(),
+    pressureIn: json['pressure_in'].toDouble(),
+    precipMm: json['precip_mm'].toDouble(),
+    precipIn: json['precip_in'].toDouble(),
+    snowCm: json['snow_cm'].toDouble(),
+    humidity: json['humidity'].toDouble(),
+    cloud: json['cloud'].toDouble(),
+    feelslikeC: json['feelslike_c'].toDouble(),
+    feelslikeF: json['feelslike_f'].toDouble(),
+    windchillC: json['windchill_c'].toDouble(),
+    windchillF: json['windchill_f'].toDouble(),
+    heatindexC: json['heatindex_c'].toDouble(),
+    heatindexF: json['heatindex_f'].toDouble(),
+    dewpointC: json['dewpoint_c'].toDouble(),
+    dewpointF: json['dewpoint_f'].toDouble(),
+    // willItRain: json['will_it_rain'].toDouble(),
+    chanceOfRain: json['chance_of_rain'].toDouble(),
+    // willItSnow: json['will_it_snow'].toDouble,
+    chanceOfSnow: json['chance_of_snow'].toDouble(),
+    visKm: json['vis_km'].toDouble(),
+    visMiles: json['vis_miles'].toDouble(),
+    gustMph: json['gust_mph'].toDouble(),
+    gustKph: json['gust_kph'].toDouble(),
+    // uv: json['uv'].toDouble(),
+  );
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -139,15 +138,15 @@ class HourTemperature {
     data['heatindex_f'] = heatindexF;
     data['dewpoint_c'] = dewpointC;
     data['dewpoint_f'] = dewpointF;
-    data['will_it_rain'] = willItRain;
+    // data['will_it_rain'] = willItRain;
     data['chance_of_rain'] = chanceOfRain;
-    data['will_it_snow'] = willItSnow;
+    // data['will_it_snow'] = willItSnow;
     data['chance_of_snow'] = chanceOfSnow;
     data['vis_km'] = visKm;
     data['vis_miles'] = visMiles;
     data['gust_mph'] = gustMph;
     data['gust_kph'] = gustKph;
-    data['uv'] = uv;
+    // data['uv'] = uv;
     return data;
   }
 }

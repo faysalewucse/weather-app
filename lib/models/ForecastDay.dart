@@ -4,14 +4,14 @@ import 'package:weather_app_steadfastit/models/HourTemperature.dart';
 
 class ForecastDay {
   String date;
-  int dateEpoch;
+  int date_epoch;
   Day day;
   Astro astro;
   List<HourTemperature> hours;
 
   ForecastDay({
     required this.date,
-    required this.dateEpoch,
+    required this.date_epoch,
     required this.day,
     required this.astro,
     required this.hours
@@ -20,19 +20,22 @@ class ForecastDay {
   factory ForecastDay.fromJson(Map<String, dynamic> json) {
     return ForecastDay(
       date: json['date'],
-      dateEpoch: json['date_epoch'],
+      date_epoch: json['date_epoch'],
       day: Day.fromJson(json['day']),
       astro: Astro.fromJson(json['astro']),
-      hours: List<HourTemperature>.from(json['hour'].map((x) => x)),
+      hours: (json['hour'] as List)
+          .map((h) => HourTemperature.fromJson(h))
+          .toList(),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'date': date,
-      'date_epoch': dateEpoch,
+      'date_epoch': date_epoch,
       'day': day.toJson(),
       'astro': astro.toJson(),
+      'hours' : hours
     };
   }
 }

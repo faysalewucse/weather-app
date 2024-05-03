@@ -3,11 +3,17 @@ import 'package:weather_app_steadfastit/helper/colors.dart';
 import 'package:weather_app_steadfastit/helper/gaps.dart';
 import 'package:weather_app_steadfastit/helper/image_assets.dart';
 import 'package:weather_app_steadfastit/helper/styles.dart';
+import 'package:weather_app_steadfastit/models/Astro.dart';
+import 'package:weather_app_steadfastit/models/Temperature.dart';
+import 'package:weather_app_steadfastit/pages/homepage/utils.dart';
 import 'package:weather_app_steadfastit/pages/homepage/widgets/card_clipper.dart';
 import 'package:weather_app_steadfastit/pages/homepage/widgets/forecast_info_card.dart';
 
 class ForecastInfo extends StatelessWidget {
-  const ForecastInfo({Key? key}) : super(key: key);
+  final Astro astro;
+  final Temperature currentTemperature;
+
+  const ForecastInfo({Key? key, required this.astro, required this.currentTemperature}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +49,7 @@ class ForecastInfo extends StatelessWidget {
                                             .titleMedium,
                                       ),
                                       Text(
-                                        "5:51PM",
+                                        astro.sunset,
                                         style:
                                         Theme.of(context).textTheme.titleLarge,
                                       )
@@ -59,7 +65,7 @@ class ForecastInfo extends StatelessWidget {
                                             .titleMedium,
                                       ),
                                       Text(
-                                        "5:51PM",
+                                        astro.sunrise,
                                         style:
                                         Theme.of(context).textTheme.titleLarge,
                                       )
@@ -84,7 +90,7 @@ class ForecastInfo extends StatelessWidget {
                                             .titleMedium,
                                       ),
                                       Text(
-                                        "1 Low",
+                                        "${currentTemperature.uv.ceil()} ${getUVLevel(currentTemperature.uv)}",
                                         style:
                                         Theme.of(context).textTheme.titleLarge,
                                       )

@@ -7,7 +7,7 @@ void showErrorMessage(String msg, {bool isSuccess = false}) {
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
-      backgroundColor: PRIMARY,
+      backgroundColor: ERROR,
       textColor: WHITE,
       fontSize: 16.0
   );
@@ -20,7 +20,7 @@ void showSuccessMessage(String msg, {bool isSuccess = false}) {
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
-      backgroundColor: ERROR,
+      backgroundColor: WHITE,
       textColor: WHITE,
       fontSize: 16.0
   );

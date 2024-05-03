@@ -6,12 +6,12 @@ class Forecast {
   Forecast({required this.forecastDays});
 
   factory Forecast.fromJson(Map<String, dynamic> json) => Forecast(
-    forecastDays: (json['forecastDays'] as List)
+    forecastDays: (json['forecastday'] as List)
         .map((day) => ForecastDay.fromJson(day))
         .toList(),
   );
 
   Map<String, dynamic> toJson() => {
-    'forecastDays': forecastDays.map((day) => day.toJson()).toList(),
+    'forecastday': forecastDays.map((day) => day.toJson()).toList(),
   };
 }

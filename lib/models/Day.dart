@@ -14,13 +14,13 @@ class Day {
   double totalsnowCm;
   double avgvisKm;
   double avgvisMiles;
-  int avghumidity;
-  int dailyWillItRain;
-  int dailyChanceOfRain;
-  int dailyWillItSnow;
-  int dailyChanceOfSnow;
+  double avghumidity;
+  double dailyWillItRain;
+  double dailyChanceOfRain;
+  double dailyWillItSnow;
+  double dailyChanceOfSnow;
   Condition condition;
-  int uv;
+  double uv;
 
   Day({
     required this.maxtempC,
@@ -60,13 +60,13 @@ class Day {
       totalsnowCm: json['totalsnow_cm'].toDouble(),
       avgvisKm: json['avgvis_km'].toDouble(),
       avgvisMiles: json['avgvis_miles'].toDouble(),
-      avghumidity: json['avghumidity'],
-      dailyWillItRain: json['daily_will_it_rain'],
-      dailyChanceOfRain: json['daily_chance_of_rain'],
-      dailyWillItSnow: json['daily_will_it_snow'],
-      dailyChanceOfSnow: json['daily_chance_of_snow'],
+      avghumidity: json['avghumidity'].toDouble(),
+      dailyWillItRain: json['daily_will_it_rain'].toDouble(),
+      dailyChanceOfRain: json['daily_chance_of_rain'].toDouble(),
+      dailyWillItSnow: json['daily_will_it_snow'].toDouble(),
+      dailyChanceOfSnow: json['daily_chance_of_snow'].toDouble(),
       condition: Condition.fromJson(json['condition']),
-      uv: json['uv'],
+      uv: json['uv'].toDouble(),
     );
   }
 

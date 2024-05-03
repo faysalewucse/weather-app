@@ -20,8 +20,6 @@ class Api {
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-          options.headers['Authorization'] = API_KEY;
-
           print("${options.method} : ${options.uri}");
           return handler.next(options);
         },

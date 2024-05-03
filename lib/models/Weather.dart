@@ -7,7 +7,11 @@ class Weather {
   final Temperature current;
   final Forecast forecast;
 
-  Weather({required this.location, required this.current, required this.forecast});
+  Weather({
+    required this.location,
+    required this.current,
+    required this.forecast,
+  });
 
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
