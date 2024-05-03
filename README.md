@@ -27,15 +27,14 @@ The Weather App is a simple and intuitive application designed to provide users 
 
 ## Installation
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/faysalewucse/weather-app.git
-
-2. Step 2
-
-```
-flutter pub get
+1. Clone the repo
+   ```sh
+   git clone https://github.com/faysalewucse/weather-app.git
+   ```
+2. Install pub 
+   ```sh
+   flutter pub get
+   ```
 
 ## Download the app
 (https://drive.google.com/file/d/1WxVT23_p8esB9Bau9au-8tlFAbr9bQTf/view?usp=sharing)
