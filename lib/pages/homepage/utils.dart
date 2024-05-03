@@ -45,5 +45,6 @@ String getUVLevel(double uvIndex) {
 
 int getCurrentTimeIndex(){
   DateTime currentTime = DateTime.now();
+  print(currentTime.hour);
   return currentTime.hour + 1;
 }

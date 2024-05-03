@@ -5,7 +5,6 @@ import 'package:weather_app_steadfastit/helper/styles.dart';
 import 'package:weather_app_steadfastit/models/Weather.dart';
 import 'package:weather_app_steadfastit/pages/homepage/widgets/homepage_widgets.dart';
 import 'package:weather_app_steadfastit/providers/forecast_provider.dart';
-import 'package:weather_app_steadfastit/providers/network_provider.dart';
 import 'package:weather_app_steadfastit/providers/weather_data_provider.dart';
 
 class Homepage extends ConsumerWidget {
@@ -13,12 +12,11 @@ class Homepage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final connectivityStatusProvider = ref.watch(connectivityStatusProviders);
-
     final weather = ref.watch(weatherDataProvider);
     final forecastDay = ref.watch(forecastDayProvider);
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -31,9 +29,7 @@ class Homepage extends ConsumerWidget {
           },
           error: (error, s) => Center(
             child: Text(
-              connectivityStatusProvider == ConnectivityStatus.isDisconnected
-                  ? "No Internet connection"
-                  : "Error Occurred",
+              "Error Occurred",
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),

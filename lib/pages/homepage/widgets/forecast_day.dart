@@ -5,7 +5,7 @@ import 'package:weather_app_steadfastit/models/HourTemperature.dart';
 import 'package:weather_app_steadfastit/pages/homepage/utils.dart';
 import 'package:weather_app_steadfastit/providers/forecast_provider.dart';
 import 'package:weather_app_steadfastit/providers/temperature_type_provider.dart';
-import 'package:weather_app_steadfastit/widgets/temp_card.dart';
+import 'package:weather_app_steadfastit/pages/homepage/widgets/temp_card.dart';
 import 'package:weather_app_steadfastit/widgets/toggle_button.dart';
 
 class ForecastDay extends StatefulWidget {
@@ -30,7 +30,7 @@ class _ForecastDayState extends State<ForecastDay> {
   }
 
   void _scrollToItem(int index) {
-    const double itemExtent = 60.0;
+    const double itemExtent = 80.0;
     final double offset = itemExtent * index;
     _controller.jumpTo(offset);
   }

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app_steadfastit/helper/colors.dart';
 import 'package:weather_app_steadfastit/helper/gaps.dart';
 import 'package:weather_app_steadfastit/helper/styles.dart';
-import 'package:weather_app_steadfastit/providers/temperature_type_provider.dart';
-import 'package:weather_app_steadfastit/widgets/temperature_text.dart';
+import 'package:weather_app_steadfastit/pages/homepage/widgets/temperature_text.dart';
 
 class TemperatureCard extends StatelessWidget {
   final String title;

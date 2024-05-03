@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app_steadfastit/api/error_handler.dart';
 import 'package:weather_app_steadfastit/controllers/location_controller.dart';
-import 'package:weather_app_steadfastit/main.dart';
 import 'package:weather_app_steadfastit/models/Weather.dart';
 import 'package:weather_app_steadfastit/services/weather_service.dart';
 
@@ -11,12 +10,16 @@ final weatherProvider =
 class WeatherController {
   final locationController = Location();
 
-  Future<Weather?> getCurrentWeather() async {
+  Future<Weather?> getCurrentWeather({String query = ""}) async {
     try {
-
       final position = await locationController.getCurrentLocation();
-      final response = await WeatherService.getCurrentWeather(
-          lat: position?.latitude ?? 0.0, long: position?.longitude ?? 0.0);
+
+      double lat = position?.latitude ?? 0.0;
+      double long = position?.longitude ?? 0.0;
+
+      String latLong = "${lat.toStringAsFixed(2)},${long.toStringAsFixed(2)}";
+
+      final response = await WeatherService.getCurrentWeather(query: query.isEmpty ? latLong : query);
 
       Weather weather = Weather.fromJson(response.data);
 

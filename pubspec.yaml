@@ -18,8 +18,6 @@ dependencies:
   flutter_riverpod: ^2.5.1
   fluttertoast: ^8.2.5
   intl:
-  connectivity_plus: ^6.0.1
-
 
 dev_dependencies:
   flutter_test:
