@@ -5,9 +5,10 @@ import 'package:weather_app_steadfastit/helper/colors.dart';
 import 'package:weather_app_steadfastit/pages/homepage/homepage.dart';
 import 'package:weather_app_steadfastit/theme/light_theme.dart';
 
+
 void main() async{
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: PRIMARY, // navigation bar color
+    systemNavigationBarColor: PRIMARY,
   ));
 
   runApp(const ProviderScope(child: MyApp()));
@@ -16,7 +17,6 @@ void main() async{
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

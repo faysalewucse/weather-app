@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:weather_app_steadfastit/utils/toast_message.dart';
 
 void showApiErrorMessage(response) {
+  debugPrint("Error message====>${response.toString()}",
+      wrapWidth: 1024);
   if (response is DioException) {
     if (response.type == DioExceptionType.connectionTimeout) {
       showErrorMessage('Connection Timeout');
@@ -30,6 +32,4 @@ void showApiErrorMessage(response) {
   } else {
     showErrorMessage(response.toString());
   }
-  debugPrint("dioError message====>${response.response?.data["message"]}",
-      wrapWidth: 1024);
 }
