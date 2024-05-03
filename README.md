@@ -1,6 +1,6 @@
 # Weather App
 
-![App Screenshot](screenshots/screenshot.jpg)
+![App Screenshot](screenshots/screenshot.png)
 
 ## Description
 
@@ -17,8 +17,8 @@ The Weather App is a simple and intuitive application designed to provide users 
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.jpg)
-![Screenshot 2](screenshots/screenshot2.jpg)
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
 
 ## Technologies Used
 
@@ -35,6 +35,10 @@ The Weather App is a simple and intuitive application designed to provide users 
    ```sh
    flutter pub get
    ```
-
+3. Run project
+   ```sh
+   flutter run
+   ```
+   
 ## Download the app
 (https://drive.google.com/file/d/1WxVT23_p8esB9Bau9au-8tlFAbr9bQTf/view?usp=sharing)
