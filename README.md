@@ -1,6 +1,6 @@
 # Weather App
 
-![App Screenshot](screenshots/screenshot.png)
+<img src="screenshots/screenshot.png" alt="App Screenshot" width="400">
 
 ## Description
 
