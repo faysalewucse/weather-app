@@ -34,7 +34,8 @@ git clone https://github.com/faysalewucse/weather-app.git
 
 2. Step 2
 
-```bash
+```
 flutter pub get
 
-[Download the App](https://drive.google.com/uc?export=download&id=1WxVT23_p8esB9Bau9au-8tlFAbr9bQTf/view?usp=sharing)
+## Download the app
+(https://drive.google.com/uc?export=download&id=1WxVT23_p8esB9Bau9au-8tlFAbr9bQTf/view?usp=sharing)
