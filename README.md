@@ -24,13 +24,17 @@ The Weather App is a simple and intuitive application designed to provide users 
 
 - Flutter: Cross-platform framework for building mobile applications.
 - Riverpod: State management library for Flutter applications.
-- Hive: Lightweight and fast NoSQL database for storing weather data.
-- Connectivity Plus: Flutter plugin for monitoring network connectivity.
-- Figma: Used for designing the user interface.
 
 ## Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/weather-app.git
+git clone https://github.com/faysalewucse/weather-app.git
+
+2. Step 2
+
+```bash
+flutter pub get
+
+[Download the App](https://drive.google.com/uc?export=download&id=1WxVT23_p8esB9Bau9au-8tlFAbr9bQTf/view?usp=sharing)
